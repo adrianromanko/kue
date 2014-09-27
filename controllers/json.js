@@ -8,8 +8,8 @@
  * Module dependencies.
  */
 
-var Queue = require('../../kue')
-    , Job = require('../../queue/job')
+var Queue = require('../lib/kue')
+    , Job = require('../lib/queue/job')
     , reds = require('reds')
     , queue = Queue.createQueue();
 
@@ -20,7 +20,7 @@ var Queue = require('../../kue')
 var search;
 function getSearch() {
     if (search) return search;
-    reds.createClient = require('../../redis').createClient;
+    reds.createClient = require('../lib/redis').createClient;
     return search = reds.createSearch(queue.client.getKey('search'));
 };
 
