@@ -1,4 +1,11 @@
+'use strict';
+
 var kue = require('../');
+var chai = require('chai');
+var assert = require('assert');
+var sinon = require('sinon');
+var should = chai.should;
+var expect = chai.expect;
 
 describe('Jobs', function () {
 
