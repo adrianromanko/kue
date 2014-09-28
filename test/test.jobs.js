@@ -35,7 +35,7 @@ describe('Jobs', function() {
 
     });
 
-    /*it('should be process a job', function(done) {
+    it('should be process a job', function(done) {
         var jobs = kue.createQueue();
         jobs.promote(200);
 
@@ -52,6 +52,6 @@ describe('Jobs', function() {
             cb();
             done()
         });
-    });*/
+    });
 
 });

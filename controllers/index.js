@@ -5,7 +5,7 @@ var env = process.env.NODE_ENV || 'development',
     config = require('../config/config')[env],
     kue = require('../lib/kue'),
     Job = require('../lib/queue/job'),
-    queue = kue.createQueue({
+    queue = kue.createQueue();/*{
         prefix: 'q',
         redis: {
             port: config.redis.port,
@@ -14,7 +14,7 @@ var env = process.env.NODE_ENV || 'development',
             db: 1,
             options: {}
         }
-    });
+    });*/
 
 /**
  * Serve the index page.
