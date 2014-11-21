@@ -42,3 +42,21 @@ app.listen(app.get('port'), function(){
 });
 
 module.exports = app;
+
+
+var kue = require('./lib/kue');
+var jobs = kue.createQueue();
+jobs.promote(200);
+
+var jobData = {
+    title: 'welcome email for tj',
+    to: '"TJ" <tj@learnboost.com>',
+    template: 'welcome-email'
+};
+
+var job = jobs.create('email', jobData).priority('high').save();
+jobs.process('email', function(job, cb) {
+
+    cb();
+
+});
